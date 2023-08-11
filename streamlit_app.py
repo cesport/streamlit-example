@@ -3,7 +3,7 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
-from streamlit-folium import folium_static
+import matplotlib
 """
 # Welcome to Streamlit!
 
