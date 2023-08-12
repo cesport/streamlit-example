@@ -1,4 +1,9 @@
 altair
 pandas
+numpy
 streamlit
 streamlit-folium
+datetime
+pickle
+plotly
+folium
