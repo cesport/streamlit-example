@@ -39,7 +39,7 @@ with tab1:
     #Define map
     map = folium.Map(location=[38, -96.5], zoom_start=3, scrollWheelZoom=False, tiles='CartoDB positron')
     choropleth = folium.Choropleth(
-        geo_data='/content/drive/MyDrive/Dashboard_dataset/us-state-boundaries.geojson',
+        geo_data='us-state-boundaries.geojson',
         data=bystate,
         columns=('DestStateName', 'Total'),
         key_on='feature.properties.name',
