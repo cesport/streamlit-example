@@ -18,9 +18,4 @@ end_date = dt.date(year=2022,month=12,day=1)
 # set tabs
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["Performance", "Carriers", "Flights", "Fares", "Cargo"])
 
-# PERFORMANCE TAB =============================================================
-with tab1:
 
-  col1, col2 = st.columns([1, 1])
-  with open('sample.txt', 'rb') as f:
-    total, airlines, complete, bystate=pickle.load(f)
