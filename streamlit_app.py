@@ -23,7 +23,7 @@ with tab1:
   col1, col2 = st.columns(2)
 
   with open('sample.txt', 'rb') as f:
-    total, airlines, complete, bystate=pickle.load(f)
+    total, airlines, complete, bystate=pd.read_pickle(f)
 
   with col1:
     st.subheader("Cancellations")
