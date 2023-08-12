@@ -21,3 +21,16 @@ tab1, tab2, tab3, tab4, tab5 = st.tabs(["Performance", "Carriers", "Flights", "F
 # PERFORMANCE TAB =============================================================
 with tab1:
   col1, col2 = st.columns(2)
+
+  with open('sample.txt', 'rb') as f:
+    total, airlines, complete, bystate=pickle.load(f)
+
+  with col1:
+    st.subheader("Cancellations")
+    subtab1, subtab2, subtab3 = st.tabs(['Total','Per airline', 'Geographic'])
+
+    subtab1.write("Total number of flight cancelled per month")
+    subtab1.line_chart(data=total)
+
+    subtab2.write("Volume of cancellations by carrier")
+    subtab2.line_chart(data=airlines)
