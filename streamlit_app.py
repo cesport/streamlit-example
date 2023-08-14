@@ -77,11 +77,10 @@ with tab1:
 
   with col4:
     st.subheader("Volume")
+    st.line_chart(paxcargo)
     subcol1, subcol2= st.columns([1,1])
 
-    subcol1.line_chart(paxcargo)
-
-    subcol2.metric("PAX yearly delta", "1500", "-31%")
+    subcol1.metric("PAX yearly delta", "1500", "-31%")
     subcol2.metric("Cargo yearly delta", "1200 lb", "15%")
 
   #Add description to the sidebar
