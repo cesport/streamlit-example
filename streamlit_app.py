@@ -23,7 +23,7 @@ with tab1:
   col1, col2 = st.columns(2)
 
   with open('sample.txt', 'rb') as f:
-    total, airlines, complete, bystate, carrierp=pd.read_pickle(f)
+    total, airlines, complete, bystate, carrierp, paxcargo=pd.read_pickle(f)
 
   with col1:
     st.subheader("Cancellations")
@@ -73,19 +73,15 @@ with tab1:
   col3, col4 = st.columns(2)
 
   col3.subheader("Carrier presence")
-  col3.write("Placeholder text used for symmetry")
   col3.bar_chart(carrierp)
 
   with col4:
     st.subheader("Volume")
     subcol1, subcol2= st.columns([1,1])
 
-    subcol1.write("PAX volume")
-    subcol1.line_chart(total)
-    subcol1.metric("PAX yearly delta", "1500", "-31%")
+    subcol1.line_chart(paxcargo)
 
-    subcol2.write("Cargo volume")
-    subcol2.line_chart(total)
+    subcol2.metric("PAX yearly delta", "1500", "-31%")
     subcol2.metric("Cargo yearly delta", "1200 lb", "15%")
 
   #Add description to the sidebar
