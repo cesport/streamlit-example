@@ -82,11 +82,11 @@ with tab1:
 
     subcol1.write("Pax volume")
     subcol1.line_chart(total)
-    subcol1.write("Delta")
+    subcol1.metric("Delta", "1500", "-31%")
 
     subcol2.write("Cargo volume")
     subcol2.line_chart(total)
-    subcol2.write("Delta")
+    subcol2.metric("Delta", "1200 lb", "15%")
 
   #Add description to the sidebar
   st.sidebar.header('Description')
