@@ -75,7 +75,7 @@ with tab1:
   col3.subheader("Carrier presence")
   # col3.bar_chart(carrierp)
   fig=px.bar(carrierp,x='Counts',y=carrierp.index, orientation='h')
-  col3.write(fig)
+  col3.plotly_chart(fig, theme="streamlit", use_container_width=True)
   
   with col4:
     st.subheader("Volume")
