@@ -23,7 +23,7 @@ with tab1:
   col1, col2 = st.columns(2)
 
   with open('sample.txt', 'rb') as f:
-    total, airlines, complete, bystate=pd.read_pickle(f)
+    total, airlines, complete, bystate, carrierp=pd.read_pickle(f)
 
   with col1:
     st.subheader("Cancellations")
@@ -74,7 +74,7 @@ with tab1:
 
   col3.subheader("Carrier presence")
   col3.write("Placeholder text used for symmetry")
-  col3.line_chart(total)
+  col3.bar_chart(carrierp)
 
   with col4:
     st.subheader("Volume")
