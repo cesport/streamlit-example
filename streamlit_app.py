@@ -73,8 +73,10 @@ with tab1:
   col3, col4 = st.columns(2)
 
   col3.subheader("Carrier presence")
-  col3.bar_chart(carrierp)
-
+  # col3.bar_chart(carrierp)
+  fig=px.bar(carrierp,x='Carrier',y='Counts', orientation='h')
+  col3.write(fig)
+  
   with col4:
     st.subheader("Volume")
     st.line_chart(paxcargo)
