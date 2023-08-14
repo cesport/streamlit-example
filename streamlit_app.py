@@ -74,7 +74,7 @@ with tab1:
 
   col3.subheader("Carrier presence")
   # col3.bar_chart(carrierp)
-  fig=px.bar(carrierp,x='Carrier',y='Counts', orientation='h')
+  fig=px.bar(carrierp,x=carrierp.index,y='Counts', orientation='h')
   col3.write(fig)
   
   with col4:
