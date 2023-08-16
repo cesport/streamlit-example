@@ -91,8 +91,9 @@ with tab1:
     for feature in choropleth.geojson.data['features']:
       state_name = feature['properties']['name']
       feature['properties']['cancelled'] = 'Cancelled flights: ' + '{:,}'.format(df_indexed.loc[state_name, 'Total']) if state_name in list(df_indexed.index) else ''
+      feature['properties']['timeframe'] = 'Time period: {} - {}'.format(timerange[0], timerange[1])
     choropleth.geojson.add_child(
-        folium.features.GeoJsonTooltip(['name', 'cancelled'], labels=False))
+        folium.features.GeoJsonTooltip(['name', 'cancelled', 'timeframe'], labels=False))
     with subtab3:
       folium_static(map, width=300, height=300)
 
