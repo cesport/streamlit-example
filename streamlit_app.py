@@ -93,7 +93,7 @@ with tab1:
         highlight=True)
     choropleth.geojson.add_to(map)
 
-    df_indexed = bystate.set_index('DestStateName')
+    df_indexed = new_bystate.set_index('DestStateName')
     for feature in choropleth.geojson.data['features']:
       state_name = feature['properties']['name']
       feature['properties']['cancelled'] = 'Cancelled flights: ' + '{:,}'.format(df_indexed.loc[state_name, 'Total']) if state_name in list(df_indexed.index) else ''
