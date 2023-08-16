@@ -12,8 +12,8 @@ from streamlit_folium import folium_static
 
 from dateutil.relativedelta import relativedelta # to add days or years
 
-start_date = dt.date(year=2020,month=1,day=1)
-end_date = dt.date(year=2022,month=12,day=1)
+start_date = dt.date(year=2023,month=1,day=1)
+end_date = dt.date(year=2023,month=4,day=15)
 
 # set tabs
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["Performance", "Carriers", "Flights", "Fares", "Cargo"])
