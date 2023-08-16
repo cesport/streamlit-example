@@ -79,6 +79,7 @@ with tab1:
     #Filter dataset
     new_bystate=bystate[bystate.Month>=timerange[0].month]
     new_bystate=new_bystate[new_bystate.Month<=timerange[1].month]
+    new_bystate=new_bystate.groupby(['DestStateName'])['Total'].agg('sum')
     new_bystate=pd.DataFrame(new_bystate)
     #Define map
     map = folium.Map(location=[38, -96.5], zoom_start=3, scrollWheelZoom=False, tiles='CartoDB positron')
