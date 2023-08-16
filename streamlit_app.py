@@ -27,7 +27,7 @@ with tab1:
 
   with col1:
     st.subheader("Cancellations")
-    subtab1, subtab2, subtab3 = st.tabs(['Total','Per airline', 'Geographic'])
+    subtab1, subtab2, subtab3 = st.tabs(['Total-t','Per airline', 'Geographic'])
 
     subtab1.write("Total number of flight cancelled per month")
     new_total=total[total.index >= str(timerange[0].month)]
