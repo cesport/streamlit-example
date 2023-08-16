@@ -76,11 +76,15 @@ with tab1:
     subtab2.line_chart(data=new_airlines)
     
     subtab3.write("Volume of cancellations by destination")
+    #Filter dataset
+    new_bystate=bystate[bystate.Month>=timerange[0].month]
+    new_bystate=new_bystate[new_bystate.Month<=timerange[1].month]
+    new_bystate=pd.DataFrame(new_bystate)
     #Define map
     map = folium.Map(location=[38, -96.5], zoom_start=3, scrollWheelZoom=False, tiles='CartoDB positron')
     choropleth = folium.Choropleth(
         geo_data='us-state-boundaries.geojson',
-        data=bystate,
+        data=new_bystate,
         columns=('DestStateName', 'Total'),
         key_on='feature.properties.name',
         line_opacity=0.8,
