@@ -104,7 +104,7 @@ with tab1:
       folium_static(map, width=300, height=300)
 
   #Col2
-  complete_new=complete.query('{} <= Month <= {}'.format(timerange[0], timerange[1]))
+  complete_new=complete.query('{} <= Month <= {}'.format(timerange[0].month, timerange[1].month))
   col2.subheader("Taxi time")
   fig = px.scatter(
       complete,
