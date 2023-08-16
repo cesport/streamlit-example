@@ -30,7 +30,9 @@ with tab1:
     subtab1, subtab2, subtab3 = st.tabs(['Total','Per airline', 'Geographic'])
 
     subtab1.write("Total number of flight cancelled per month")
-    subtab1.line_chart(data=total)
+    new_total=total[total.index >= str(timerange[0].month)]
+    new_total=new_total[new_total.index <= str(timerange[1].month+1)]
+    subtab1.line_chart(data=new_total)
 
     subtab2.write("Volume of cancellations by carrier")
     subtab2.line_chart(data=airlines)
@@ -93,13 +95,13 @@ with tab1:
 
   # Add a slider to the sidebar:
   st.sidebar.header('Time period')
-  st.sidebar.slider(
-  label='Please select an interval:',
-  min_value=start_date,
-  max_value=end_date,
-  value=(start_date, end_date),
-  format='MMM YY',
-  step=dt.timedelta(days=1)
+  timerange=st.sidebar.slider(
+    label='Please select an interval:',
+    min_value=start_date,
+    max_value=end_date,
+    value=(start_date, end_date),
+    format='MMM YY',
+    step=dt.timedelta(days=1)
   )
 
   # Add a selectbox to the sidebar:
