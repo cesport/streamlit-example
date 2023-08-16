@@ -63,7 +63,7 @@ with tab1:
 
   with col1:
     st.subheader("Cancellations")
-    subtab1, subtab2, subtab3 = st.tabs(['Total-2','Per airline', 'Geographic'])
+    subtab1, subtab2, subtab3 = st.tabs(['Total','Per airline', 'Geographic'])
 
     subtab1.write("Total number of flight cancelled per month")
     new_total=total[total.index >= str(timerange[0].month)]
@@ -71,9 +71,11 @@ with tab1:
     subtab1.line_chart(data=new_total)
 
     subtab2.write("Volume of cancellations by carrier")
-    subtab2.line_chart(data=airlines)
+    new_airlines=airlines[airlines.index >= str(timerange[0].month)]
+    new_airlines=new_airlines[new_airlines.index <= str(timerange[1].month+1)]
+    subtab2.line_chart(data=new_airlines)
+    
     subtab3.write("Volume of cancellations by destination")
-
     #Define map
     map = folium.Map(location=[38, -96.5], zoom_start=3, scrollWheelZoom=False, tiles='CartoDB positron')
     choropleth = folium.Choropleth(
