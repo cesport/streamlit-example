@@ -15,6 +15,42 @@ from dateutil.relativedelta import relativedelta # to add days or years
 start_date = dt.date(year=2023,month=1,day=1)
 end_date = dt.date(year=2023,month=4,day=15)
 
+# SIDEBAR
+#Add description to the sidebar
+st.sidebar.header('Description')
+st.sidebar.info('This is the description for the performance dashboard. Lorem ipsum dolor sit amet, \
+consectetur adipiscing elit. Ut in vestibulum nisi, et blandit neque. Vestibulum ipsum nibh, \
+consectetur in fermentum et, ornare in justo. Proin pulvinar sagittis porta. Nullam metus orci, interdum et diam sed.', icon="ℹ️")
+
+# Add a slider to the sidebar:
+st.sidebar.header('Time period')
+timerange=st.sidebar.slider(
+  label='Please select an interval:',
+  min_value=start_date,
+  max_value=end_date,
+  value=(start_date, end_date),
+  format='MMM YY',
+  step=dt.timedelta(days=1)
+)
+
+# Add a selectbox to the sidebar:
+st.sidebar.header('Origin airport selection')
+st.sidebar.selectbox(
+    label='Focus:',
+    options=('CDG', 'JFK', 'NRT')
+)
+
+#Add radio buttons
+st.sidebar.write('Benchmarks:')
+st.sidebar.checkbox('CDG')
+st.sidebar.checkbox('JFK')
+st.sidebar.checkbox('NRT')
+
+st.sidebar.header('Data source details')
+st.sidebar.write('These are the data source details. Lorem ipsum dolor sit amet, \
+consectetur adipiscing elit. Ut in vestibulum nisi, et blandit neque. Vestibulum ipsum nibh, \
+consectetur in fermentum et, ornare in justo. Proin pulvinar sagittis porta. Nullam metus orci, interdum et diam sed.')
+
 # set tabs
 tab1, tab2, tab3, tab4, tab5 = st.tabs(["Performance", "Carriers", "Flights", "Fares", "Cargo"])
 
@@ -27,7 +63,7 @@ with tab1:
 
   with col1:
     st.subheader("Cancellations")
-    subtab1, subtab2, subtab3 = st.tabs(['Total-t','Per airline', 'Geographic'])
+    subtab1, subtab2, subtab3 = st.tabs(['Total-2','Per airline', 'Geographic'])
 
     subtab1.write("Total number of flight cancelled per month")
     new_total=total[total.index >= str(timerange[0].month)]
@@ -86,41 +122,6 @@ with tab1:
 
     subcol1.metric("PAX yearly delta", "1500", "-31%")
     subcol2.metric("Cargo yearly delta", "1200 lb", "15%")
-
-  #Add description to the sidebar
-  st.sidebar.header('Description')
-  st.sidebar.info('This is the description for the performance dashboard. Lorem ipsum dolor sit amet, \
-  consectetur adipiscing elit. Ut in vestibulum nisi, et blandit neque. Vestibulum ipsum nibh, \
-  consectetur in fermentum et, ornare in justo. Proin pulvinar sagittis porta. Nullam metus orci, interdum et diam sed.', icon="ℹ️")
-
-  # Add a slider to the sidebar:
-  st.sidebar.header('Time period')
-  timerange=st.sidebar.slider(
-    label='Please select an interval:',
-    min_value=start_date,
-    max_value=end_date,
-    value=(start_date, end_date),
-    format='MMM YY',
-    step=dt.timedelta(days=1)
-  )
-
-  # Add a selectbox to the sidebar:
-  st.sidebar.header('Origin airport selection')
-  st.sidebar.selectbox(
-      label='Focus:',
-      options=('CDG', 'JFK', 'NRT')
-  )
-
-  #Add radio buttons
-  st.sidebar.write('Benchmarks:')
-  st.sidebar.checkbox('CDG')
-  st.sidebar.checkbox('JFK')
-  st.sidebar.checkbox('NRT')
-
-  st.sidebar.header('Data source details')
-  st.sidebar.write('These are the data source details. Lorem ipsum dolor sit amet, \
-  consectetur adipiscing elit. Ut in vestibulum nisi, et blandit neque. Vestibulum ipsum nibh, \
-  consectetur in fermentum et, ornare in justo. Proin pulvinar sagittis porta. Nullam metus orci, interdum et diam sed.')
 
 with tab2:
    st.header("Carriers dashboard")
