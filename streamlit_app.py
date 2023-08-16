@@ -107,7 +107,7 @@ with tab1:
   complete_new=complete.query('{} <= Month <= {}'.format(timerange[0].month, timerange[1].month))
   col2.subheader("Taxi time")
   fig = px.scatter(
-      complete,
+      complete_new,
       x="TaxiOut",
       y="DepDelay",
       size="Distance",
