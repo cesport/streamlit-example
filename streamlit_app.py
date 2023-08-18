@@ -105,7 +105,7 @@ with tab1:
 
   #Col2
   complete_new=complete.query('{} <= Month <= {}'.format(timerange[0].month, timerange[1].month))
-  col2.subheader("Taxi time 3")
+  col2.subheader("Taxi time")
   fig = px.scatter(
       complete_new,
       x="TaxiOut",
