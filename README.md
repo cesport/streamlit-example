@@ -1,4 +1,4 @@
-# Welcome to the draft for the ADL US T&T dashboard! ✈️
+# Welcome to the ADL US T&T beta dashboard! ✈️
 
 ## Data processing
 Because of the size of the data, it is not recommended to upload the complete BTS dataset on the virtual machine. Data processing is performed in a separate Python notebook. I personally used Google Colab to run it on the Cloud but you can use Jupyter or whatever you prefer. 💅
