@@ -158,7 +158,7 @@ with tab1:
     subcol1.metric("PAX yearly delta", "1500", "-31%")
     subcol2.metric("Cargo yearly delta", "1200 lb", "15%")
 
-## Initialize rest of the tabs
+# ADDITIONAL TABS =============================================================
 with tab2:
    st.header("Carriers dashboard")
    st.image("https://static.streamlit.io/examples/dog.jpg", width=200)
