@@ -13,8 +13,9 @@ The easiest way to deploy the dashboard on a public domain is to create an accou
 - `streamlit_app.py` for the dashboard code
 - `requirements.txt` for all the packages required to run the python code on streamlit_app.py
 - Other files that are read by your dashboard code
+
 The latest version of this dashboard is currently hosted [here](https://cesport-streamlit-example-streamlit-app-su2ab2.streamlit.app/)
 
-## Questions ❓
-If you have any questions, checkout the [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io). Also feel free to contact me, Cesar Portocarrero, my email is cportoca@stanford.edu 
+## Questions
+If you have any questions ❓, checkout the [documentation](https://docs.streamlit.io) and [community
+forums](https://discuss.streamlit.io). Also feel free to contact me, Cesar Portocarrero, my email is cportoca@stanford.edu
